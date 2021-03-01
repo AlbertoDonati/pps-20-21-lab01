@@ -2,8 +2,8 @@ package lab01.example.model;
 
 /**
  * This class represent a particular instance of a BankAccountWithAtm.
- * In particular, a Simple Bank Account allows always the deposit
- * while the withdraw is allowed only if the balance greater or equal the withdrawal amount
+ * In particular, a Simple Bank Account with Atm allows always the deposit
+ * while the withdraw is allowed only if the balance greater or equal the withdrawal amount + fee
  */
 public class SimpleBankAccountWithAtm extends BankAccountAbstract implements BankAccount {
 
