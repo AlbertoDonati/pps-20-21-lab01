@@ -11,15 +11,6 @@ public class SimpleBankAccount extends BankAccountAbstract implements BankAccoun
         this.holder = holder;
         this.balance = balance;
     }
-    @Override
-    public AccountHolder getHolder(){
-        return this.holder;
-    }
-
-    @Override
-    public double getBalance() {
-        return this.balance;
-    }
 
     @Override
     public void deposit(final int usrID, final double amount) {
