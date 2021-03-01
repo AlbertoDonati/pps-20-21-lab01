@@ -5,10 +5,7 @@ package lab01.example.model;
  * In particular, a Simple Bank Account allows always the deposit
  * while the withdraw is allowed only if the balance greater or equal the withdrawal amount
  */
-public class SimpleBankAccount implements BankAccount {
-
-    private double balance;
-    private final AccountHolder holder;
+public class SimpleBankAccount extends BankAccountAbstract implements BankAccount {
 
     public SimpleBankAccount(final AccountHolder holder, final double balance) {
         this.holder = holder;
@@ -42,7 +39,4 @@ public class SimpleBankAccount implements BankAccount {
         return this.balance >= amount;
     }
 
-    private boolean checkUser(final int id) {
-        return this.holder.getId() == id;
-    }
 }
