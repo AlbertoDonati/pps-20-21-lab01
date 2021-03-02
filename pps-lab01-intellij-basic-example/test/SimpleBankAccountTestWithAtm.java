@@ -1,54 +1,44 @@
-import lab01.example.model.*;
+import lab01.example.model.AccountHolder;
+import lab01.example.model.SimpleBankAccountWithAtm;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
-
 /**
- * The test suite for testing the SimpleBankAccount implementation
+ * The test suite for testing the SimpleBankAccountWithAtm implementation
  */
-class SimpleBankAccountTestWithAtm {
+class SimpleBankAccountTestWithAtm extends BankAccountTestAbstract {
 
-    private AccountHolder accountHolder;
-    private BankAccount bankAccount;
+    private final int idToTest = 1;
+    private final int idToTestWrong = 2;
+    private final double amountToTest = 100;
+    private final double otherAmountToTest = 60;
+    private final double valueExpectedToTest = 99;
+    private final double otherValueExpectedToTest = 38;
 
     @BeforeEach
-    void beforeEach(){
+    void beforeEach() {
         accountHolder = new AccountHolder("Mario", "Rossi", 1);
         bankAccount = new SimpleBankAccountWithAtm(accountHolder, 0, 1);
     }
 
     @Test
-    void testInitialBalance() {
-        assertEquals(0, bankAccount.getBalance());
+    void testMySimpleDeposit() {
+        testDeposit (idToTest, amountToTest, valueExpectedToTest);
     }
 
     @Test
-    void testDeposit() {
-        bankAccount.deposit(accountHolder.getId(), 100);
-        assertEquals(99, bankAccount.getBalance());
+    void testMySimpleWrongDeposit() {
+        testWrongDeposit (idToTest,idToTestWrong, amountToTest, otherAmountToTest, valueExpectedToTest);
     }
 
     @Test
-    void testWrongDeposit() {
-        bankAccount.deposit(accountHolder.getId(), 100);
-        bankAccount.deposit(2, 50);
-        assertEquals(99 , bankAccount.getBalance());
+    void testMySimpleWithdraw() {
+        testWithdraw (idToTest,amountToTest ,otherAmountToTest, otherValueExpectedToTest);
     }
 
     @Test
-    void testWithdraw() {
-        bankAccount.deposit(accountHolder.getId(), 100);
-        assertEquals(99, bankAccount.getBalance());
-        bankAccount.withdraw(accountHolder.getId(), 70);
-        assertEquals(28, bankAccount.getBalance());
-    }
-
-    @Test
-    void testWrongWithdraw() {
-        bankAccount.deposit(accountHolder.getId(), 100);
-        bankAccount.withdraw(2, 70);
-        assertEquals(99, bankAccount.getBalance());
+    void testMySimpleWrongWithdraw() {
+        testWrongWithdraw (idToTest,idToTestWrong, amountToTest, otherAmountToTest, valueExpectedToTest);
     }
 
 }
