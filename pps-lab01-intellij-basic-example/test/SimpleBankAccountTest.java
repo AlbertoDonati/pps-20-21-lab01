@@ -6,6 +6,7 @@ import org.junit.jupiter.api.Test;
 /**
  * The test suite for testing the SimpleBankAccount implementation
  */
+
 class SimpleBankAccountTest extends BankAccountTestAbstract {
 
     private final int idToTest = 1;

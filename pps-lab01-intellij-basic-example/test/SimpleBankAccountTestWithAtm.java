@@ -6,6 +6,7 @@ import org.junit.jupiter.api.Test;
 /**
  * The test suite for testing the SimpleBankAccountWithAtm implementation
  */
+
 class SimpleBankAccountTestWithAtm extends BankAccountTestAbstract {
 
     private final int idToTest = 1;
