@@ -56,4 +56,5 @@ public class CircularListImpl implements CircularList {
     public Optional<Integer> next(SelectStrategy strategy) {
         return Optional.empty();
     }
+
 }
